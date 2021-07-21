@@ -35,6 +35,7 @@ jobs:
                   CONTENTFULSPACEID: ${{ secrets.CONTENTFULSPACEID }}
                   CONTENTFULENVIRONMENT: ${{ secrets.CONTENTFULENVIRONMENT }}
                   CONTENTFULDELIVERYAPITOKEN: ${{ secrets.CONTENTFULDELIVERYAPITOKEN }}
+                  NEXT_PUBLIC_GATRACKINGID: ${{ secrets.NEXT_PUBLIC_GATRACKINGID }}
     close_pull_request_job:
         if: github.event_name == 'pull_request' && github.event.action == 'closed'
         runs-on: ubuntu-latest
