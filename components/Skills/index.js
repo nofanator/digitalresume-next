@@ -1,2 +1,3 @@
-import Skills from './Skills'
+import Skills, { skillsFields } from './Skills'
 export default Skills
+export { skillsFields }

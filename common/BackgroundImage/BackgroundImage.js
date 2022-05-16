@@ -7,19 +7,19 @@ const Div = styled.div`
 `
 
 const DivBackground = styled.div`
-    opacity: .4;
+    opacity: 0.4;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    position: absolute;   
-    background-image: url(${props => props.backgroundImage});
+    position: absolute;
+    background-image: url(${(props) => props.backgroundImage});
     background-size: cover;
-    background-position: left middle;
+    background-position: left;
     background-repeat: no-repeat;
 `
 
-function BackgroundImage(props) {
+const BackgroundImage = (props) => {
     const { children, backgroundImage } = props
 
     if (!backgroundImage) {
@@ -28,11 +28,8 @@ function BackgroundImage(props) {
 
     return (
         <Div>
-            <DivBackground backgroundImage={ backgroundImage }>
-            </DivBackground>
-            <Div>
-                { children }
-            </Div>
+            <DivBackground backgroundImage={backgroundImage}></DivBackground>
+            <Div>{children}</Div>
         </Div>
     )
 }

@@ -7,7 +7,7 @@ const Ul = styled.ul`
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: ${props => props.center ? 'center' : 'flex-start'};
+    justify-content: ${(props) => (props.center ? 'center' : 'flex-start')};
 `
 const Li = styled.li`
     display: flex;
@@ -26,8 +26,7 @@ const Sep = styled.span`
     }
 `
 
-
-function HorizontalList(props) {
+const HorizontalList = (props) => {
     const { listKey, list, center } = props
 
     if (list.length <= 0) {
@@ -35,15 +34,14 @@ function HorizontalList(props) {
     }
 
     return (
-        <Ul center={ center }>
-            {list.map((item, i) => 
+        <Ul center={center}>
+            {list.map((item, i) => (
                 <Li key={`${listKey}-item-${i}`}>
                     <Sep>&bull;</Sep>
-                    { item }
+                    {item}
                 </Li>
-            )}
+            ))}
         </Ul>
-        
     )
 }
 

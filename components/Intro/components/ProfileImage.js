@@ -13,13 +13,12 @@ const Div = styled.div`
     }
 `
 
-
-function ProfileImage(props) {
+const ProfileImage = (props) => {
     const { imagePath } = props
-    
+
     return (
         <Div>
-            <img src={ imagePath } />
+            <img src={imagePath} />
         </Div>
     )
 }

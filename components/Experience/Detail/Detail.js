@@ -31,7 +31,23 @@ const DivTitle = styled.div`
     }
 `
 
-function Detail(props) {
+const jobFields = `{
+    sectionTitle
+    jobsCollection {
+        items {
+            id
+            employer
+            start
+            end
+            title
+            jobSummary: summary {
+                json
+            }
+        }
+    }
+}`
+
+const Detail = (props) => {
     const { job } = props
 
     const hasPhotos = job.photosCollection.items && job.photosCollection.items.length > 0
@@ -63,3 +79,4 @@ function Detail(props) {
 }
 
 export default Detail
+export { jobFields }

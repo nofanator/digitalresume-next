@@ -6,24 +6,27 @@ import BackgroundImage from 'common/BackgroundImage'
 
 const Div = styled.div`
     color: ${(props) => props.textColor};
-    background: ${(props) => props.backgroundColor};
+    background: ${(props) => (props.backgroundColor ? props.backgroundColor : 'transparent')};
     position: relative;
 `
 const DivInner = styled.div`
     max-width: 600px;
+    background: ${(props) => (props.backgroundColor ? props.backgroundColor : 'transparent')};
     padding: ${(props) => (props.skinny ? '10px' : '40px 10px')};
     margin: 0 auto;
     position: relative;
 `
 
-function Section(props) {
-    const { themeName, skinny, backgroundImage } = props
+const Section = (props) => {
+    const { themeName, skinny, backgroundImage, fullbleed } = props
     const theme = getTheme(themeName)
 
     return (
-        <Div textColor={theme.TEXT} backgroundColor={theme.BACKGROUND}>
+        <Div textColor={theme.TEXT} backgroundColor={fullbleed && theme.BACKGROUND}>
             <BackgroundImage backgroundImage={backgroundImage}>
-                <DivInner skinny={skinny}>{props.children}</DivInner>
+                <DivInner backgroundColor={!fullbleed && theme.BACKGROUND} skinny={skinny}>
+                    {props.children}
+                </DivInner>
             </BackgroundImage>
         </Div>
     )

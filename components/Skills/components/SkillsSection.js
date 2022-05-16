@@ -6,13 +6,13 @@ const Div = styled.div`
     margin-bottom: 12px;
 `
 
-function SkillsSection(props) {
+const SkillsSection = (props) => {
     const { section } = props
     const { list } = section
     return (
         <Div>
-            <h3>{ section.title }</h3>
-            <HorizontalList listKey="skill" list={ list } />
+            <h3>{section.title}</h3>
+            <HorizontalList listKey="skill" list={list} />
         </Div>
     )
 }

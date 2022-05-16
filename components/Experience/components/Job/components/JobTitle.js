@@ -1,4 +1,4 @@
-import React from 'react' 
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -12,12 +12,12 @@ const TitleInner = styled.span`
     }
 `
 
-function JobTitle(props) {
+const JobTitle = (props) => {
     const { employer, title } = props
     return (
         <TitleInner>
-            { employer }
-            <span>{ title }</span>
+            {employer}
+            <span>{title}</span>
         </TitleInner>
     )
 }

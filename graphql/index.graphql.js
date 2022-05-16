@@ -1,8 +1,17 @@
+import { educationFields } from '@/components/Education'
+import { introFields } from '@/components/Intro'
+import { skillsFields } from '@/components/Skills'
+import { jobFields } from '@/components/Experience'
+import { aboutFields } from '@/components/About'
+
 const query = `{
   homePageCollection(limit: 1) {
     total
     items {
       pageTitle
+      backgroundImage {
+        url
+      }
       componentsCollection {
         items {
           __typename
@@ -27,61 +36,15 @@ const query = `{
   }
 }
 
-fragment introFields on Intro {
-  name
-  phone
-  email
-  summary
-  status
-  positiveStatus
-  backgroundImage {
-    url
-  }
-  profileImage {
-    url
-  }
-}
+fragment introFields on Intro ${introFields}
 
-fragment educationFields on EducationComponent {
-  school
-  start
-  end
-  major
-  minor
-}
+fragment educationFields on EducationComponent ${educationFields}
 
-fragment skillsFields on Skills {
-  sectionTitle
-  skillsCollection {
-    items {
-      title
-      list
-    }
-  }
-}
+fragment skillsFields on Skills ${skillsFields}
 
-fragment jobFields on JobsComponent {
-  sectionTitle
-  jobsCollection {
-    items {
-      id
-      employer
-      start
-      end
-      title
-      jobSummary: summary {
-        json
-      }
-    }
-  }
-}
+fragment jobFields on JobsComponent ${jobFields}
 
-fragment aboutFields on AboutComponent {
-  aboutSummary: summary {
-    json
-  }
-  tech
-  repo
-}`
+fragment aboutFields on AboutComponent ${aboutFields}
+`
 
 export default query

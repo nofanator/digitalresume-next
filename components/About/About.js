@@ -16,7 +16,15 @@ const Div = styled.div`
     }
 `
 
-function About(props) {
+const aboutFields = `{
+    aboutSummary: summary {
+        json
+    }
+    tech
+    repo
+}`
+
+const About = (props) => {
     const { aboutSummary, repo, tech, themeName } = props
 
     return (
@@ -39,3 +47,4 @@ About.propTypes = {
 }
 
 export default About
+export { aboutFields }
