@@ -40,6 +40,7 @@ Section.propTypes = {
 
 Section.defaultProps = {
     skinny: false,
+    fullbleed: true,
 }
 
 export default Section
