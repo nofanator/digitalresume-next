@@ -33,7 +33,7 @@ const DivImage = styled.div`
     padding-bottom: 75%;
 `
 
-function ImageGrid(props) {
+const ImageGrid = (props) => {
     const { images } = props
 
     if (!images) {

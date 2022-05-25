@@ -3,8 +3,17 @@ import SkillsSection from './components/SkillsSection'
 import Section from 'common/Section'
 import { themes } from 'colors'
 
-function Skills(props) {
+const skillsFields = `{
+    sectionTitle
+    skillsCollection {
+        items {
+        title
+        list
+        }
+    }
+}`
 
+const Skills = (props) => {
     const { skills } = props
     if (!skills) {
         return null
@@ -14,18 +23,15 @@ function Skills(props) {
         return null
     }
 
-
     return (
-        <Section themeName={ themes.NEUTRAL }>
+        <Section themeName={themes.NEUTRAL}>
             <h2>Skills</h2>
-            {skills.map((section, i) => 
-                <SkillsSection 
-                    key={`skills-sect-${i}`} 
-                    section={ section } 
-                />
-            )}
+            {skills.map((section, i) => (
+                <SkillsSection key={`skills-sect-${i}`} section={section} />
+            ))}
         </Section>
     )
 }
 
 export default Skills
+export { skillsFields }

@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-
 html {
 
 }
@@ -45,8 +44,7 @@ body {
     }
 }
 `
-
-function PageTemplate(props) {
+const PageTemplate = (props) => {
     const { children } = props
     return (
         <React.Fragment>

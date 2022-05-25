@@ -8,13 +8,18 @@ export const getStaticProps = async () => {
     const data = await getContentfulData(query)
     return {
         props: {
-            cmsData: data.homePageCollection.items[0],
+            cmsData: data ? data.homePageCollection.items[0] : null,
         },
     }
 }
 
 const Home = (props) => {
     const { cmsData } = props
+
+    if (!cmsData) {
+        return <div>Couldn't get data from contentful</div>
+    }
+
     return (
         <PageTemplate>
             {cmsData.componentsCollection.items.map((c, i) => (

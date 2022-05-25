@@ -1,6 +1,6 @@
 import Experience from './Experience'
+import Detail, { jobFields } from './Detail'
 
-import Detail from './Detail'
-export { Detail }
+export { Detail, jobFields }
 
 export default Experience

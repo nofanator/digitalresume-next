@@ -13,7 +13,7 @@ const Li = styled.li`
     }
 `
 
-function Achievements(props) {
+const Achievements = (props) => {
     const { list } = props
     return (
         <Ul>

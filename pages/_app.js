@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ReactGA from 'react-ga'
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
     const router = useRouter()
     useEffect(() => {
         if (typeof window === undefined) return

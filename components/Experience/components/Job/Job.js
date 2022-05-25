@@ -30,7 +30,7 @@ const LinkContainer = styled.div`
     text-align: right;
 `
 
-function Job(props) {
+const Job = (props) => {
     const { job, themeName } = props
 
     const theme = getTheme(themeName)

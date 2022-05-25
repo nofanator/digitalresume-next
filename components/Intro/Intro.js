@@ -38,10 +38,25 @@ const DivStatus = styled.div`
     color: aqua;
 `
 
-function Intro(props) {
+const introFields = `{
+    name
+    phone
+    email
+    summary
+    status
+    positiveStatus
+    backgroundImage {
+        url
+    }
+    profileImage {
+        url
+    }
+}`
+
+const Intro = (props) => {
     const { name, summary, status, email, phone, profileImage, backgroundImage } = props
     return (
-        <Section backgroundImage={backgroundImage.url}>
+        <Section backgroundImage={backgroundImage.url} fullbleed>
             <Div>
                 <ProfileImage imagePath={profileImage.url} />
                 <h1>{name}</h1>
@@ -68,3 +83,4 @@ function Intro(props) {
 }
 
 export default Intro
+export { introFields }

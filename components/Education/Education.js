@@ -22,7 +22,15 @@ const Split = styled.div`
     margin-bottom: 12px;
 `
 
-function Education(props) {
+const educationFields = `{
+    school
+    start
+    end
+    major
+    minor
+}`
+
+const Education = (props) => {
     const { school, start, end, major, minor } = props
 
     const list = []
@@ -33,12 +41,13 @@ function Education(props) {
         <Section>
             <h2>Education</h2>
             <Split>
-                <h3>{ school }</h3>
+                <h3>{school}</h3>
                 <div>{`${start} - ${end}`}</div>
             </Split>
-            <HorizontalList listKey="degrees" list={ list } />
+            <HorizontalList listKey="degrees" list={list} />
         </Section>
     )
 }
 
 export default Education
+export { educationFields }
