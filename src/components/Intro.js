@@ -71,7 +71,7 @@ const Intro = (props) => {
 
     if (style === pageStyles.horizontal) {
         return (
-            <Section backgroundImage={backgroundImage.url} fullbleed skinny>
+            <Section backgroundImage={backgroundImage.url} fullbleed skinny style={style}>
                 <SlimDiv>
                     <div>
                         <ProfileImage imagePath={profileImage.url} size={'small'} />
@@ -94,7 +94,7 @@ const Intro = (props) => {
     }
 
     return (
-        <Section backgroundImage={backgroundImage.url} fullbleed>
+        <Section backgroundImage={backgroundImage.url} fullbleed style={style}>
             <Div>
                 <ProfileImage imagePath={profileImage.url} />
                 <h1>{name}</h1>

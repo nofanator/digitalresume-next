@@ -31,7 +31,7 @@ const About = (props) => {
 
     if (style === pageStyles.horizontal && siteUrl) {
         return (
-            <Section skinny>
+            <Section skinny style={style}>
                 <Div textAlign={'left'}>
                     <h2>About this document</h2>
                     <p>
@@ -50,7 +50,7 @@ const About = (props) => {
     }
 
     return (
-        <Section>
+        <Section style={style}>
             <Div textAlign={'center'}>
                 <h2>About this site</h2>
                 {documentToReactComponents(aboutSummary.json)}

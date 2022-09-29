@@ -9,7 +9,13 @@ const palettes = {
     dark: 'dark',
 }
 
+const opacityLevels = {
+    low: 'low',
+    normal: 'normal',
+}
+
 const lightTheme = {
+    backgroundOpacityLevel: opacityLevels.low,
     lightPalette: {
         backgroundColor: '#FFFFFF',
         textColor: '#000',
@@ -25,6 +31,7 @@ const lightTheme = {
 }
 
 const darkTheme = {
+    backgroundOpacityLevel: opacityLevels.normal,
     lightPalette: {
         backgroundColor: '#404040',
         textColor: '#fff',
@@ -73,4 +80,4 @@ const getTheme = (themeName) => {
     return darkTheme
 }
 
-export { getTheme, themes, palettes, getBackgroundColor, getTextColor }
+export { getTheme, themes, palettes, getBackgroundColor, getTextColor, opacityLevels }

@@ -20,7 +20,7 @@ const Fun = () => {
     const { id } = router.query
     return (
         <PageTemplate>
-            <Section palette={palettes.dark} skinny={true}>
+            <Section palette={palettes.dark} skinny={true} style={style}>
                 <BackDiv>
                     <Link href="/">Back</Link>
                     <span>Chris Knopf</span>

@@ -10,10 +10,10 @@ const H2 = styled.h2`
 `
 
 const DetailedExperience = (props) => {
-    const { experience } = props
+    const { experience, style } = props
 
     return (
-        <Section palette={palettes.dark} skinny>
+        <Section palette={palettes.dark} skinny style={style}>
             <H2>Experience</H2>
             {experience.map((job, i) => (
                 <Job key={`job-${i}`} job={job} />

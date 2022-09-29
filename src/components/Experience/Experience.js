@@ -4,10 +4,10 @@ import Section from '@/common/Section'
 import { palettes } from '@/common/Themes'
 
 const Experience = (props) => {
-    const { experience } = props
+    const { experience, style } = props
 
     return (
-        <Section palette={palettes.dark}>
+        <Section palette={palettes.dark} style={style}>
             <h2>Experience</h2>
             {experience.map((job, i) => (
                 <JobSummary key={`job-${i}`} job={job} />

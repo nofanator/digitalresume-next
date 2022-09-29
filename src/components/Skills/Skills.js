@@ -28,7 +28,7 @@ const Skills = (props) => {
     }
 
     return (
-        <Section palette={palettes.neutral} skinny={style === pageStyles.horizontal}>
+        <Section palette={palettes.neutral} skinny={style === pageStyles.horizontal} style={style}>
             <h2>Skills</h2>
             {skills.map((section, i) => (
                 <SkillsSection key={`skills-sect-${i}`} section={section} />

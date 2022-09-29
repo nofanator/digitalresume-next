@@ -41,7 +41,7 @@ const Education = (props) => {
     list.push(`Minor: ${minor}`)
 
     return (
-        <Section palette={palettes.light} skinny={style === pageStyles.horizontal}>
+        <Section palette={palettes.light} skinny={style === pageStyles.horizontal} style={style}>
             <h2>Education</h2>
             <Split>
                 <h3>{school}</h3>

@@ -26,9 +26,11 @@ const ComponentByType = (props) => {
     }
 
     if (data.__typename === 'JobsComponent') {
-        let jobComponent = <Experience experience={data.jobsCollection.items} />
+        let jobComponent = <Experience experience={data.jobsCollection.items} style={pageStyle} />
         if (pageStyle === pageStyles.horizontal) {
-            jobComponent = <DetailedExperience experience={data.jobsCollection.items} />
+            jobComponent = (
+                <DetailedExperience experience={data.jobsCollection.items} style={pageStyle} />
+            )
         }
         return jobComponent
     }

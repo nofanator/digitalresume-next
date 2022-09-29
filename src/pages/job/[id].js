@@ -46,10 +46,10 @@ export const getStaticProps = async ({ params }) => {
 }
 
 const Job = (props) => {
-    const { jobData, aboutData } = props
+    const { jobData, aboutData, style } = props
     return (
         <PageTemplate>
-            <Section palette={palettes.dark} skinny={true}>
+            <Section palette={palettes.dark} skinny={true} style={style}>
                 <BackDiv>
                     <Link href="/">Back</Link>
                     <span>Chris Knopf</span>
