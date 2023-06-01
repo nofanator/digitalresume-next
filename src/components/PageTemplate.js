@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 import { createGlobalStyle } from 'styled-components'
-import { ThemeContext, getTheme, themes } from '@/common/Themes'
+import { ThemeContext, getTheme, themes, ThemeSwitcher } from '@/common/Themes'
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -46,7 +46,14 @@ body {
 const PageTemplate = (props) => {
     const { children, defaultTheme } = props
 
-    const [theme] = useState(defaultTheme)
+    const [theme, setTheme] = useState(defaultTheme)
+
+    const darkTheme = getTheme(themes.dark)
+    const lightTheme = getTheme(themes.light)
+
+    const toggleTheme = () => {
+        setTheme(theme.name === themes.dark ? lightTheme : darkTheme)
+    }
 
     return (
         <React.Fragment>
@@ -68,7 +75,10 @@ const PageTemplate = (props) => {
                         rel="stylesheet"
                     />
                 </Head>
-                <div>{children}</div>
+                <div>
+                    {children}
+                    <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
+                </div>
             </ThemeContext.Provider>
         </React.Fragment>
     )

@@ -47,7 +47,6 @@ const jobSummaryFields = `{
 
 const JobSummary = (props) => {
     const { job } = props
-    const theme = useContext(ThemeContext)
 
     return (
         <Div>

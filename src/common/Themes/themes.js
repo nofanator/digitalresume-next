@@ -1,6 +1,6 @@
 const themes = {
-    dark: 'dark',
-    light: 'light',
+    dark: 'Dark',
+    light: 'Light',
 }
 
 const palettes = {
@@ -15,6 +15,7 @@ const opacityLevels = {
 }
 
 const lightTheme = {
+    name: themes.light,
     backgroundOpacityLevel: opacityLevels.low,
     lightPalette: {
         backgroundColor: '#FFFFFF',
@@ -31,6 +32,7 @@ const lightTheme = {
 }
 
 const darkTheme = {
+    name: themes.dark,
     backgroundOpacityLevel: opacityLevels.normal,
     lightPalette: {
         backgroundColor: '#404040',
