@@ -3,10 +3,20 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 import { createGlobalStyle } from 'styled-components'
-import { ThemeContext, getTheme, themes, ThemeSwitcher } from '@/common/Themes'
+import {
+    ThemeContext,
+    getTheme,
+    themes,
+    ThemeSwitcher,
+    getBackgroundColor,
+    getTextColor,
+    palettes,
+} from '@/common/Themes'
 
 const GlobalStyle = createGlobalStyle`
 body {
+    background-color: ${(props) => getBackgroundColor(props.theme, palettes.dark)};
+    color: ${(props) => getTextColor(props.theme, palettes.dark)};
     height: 100%;
     width: 100%;
     padding: 0;
@@ -53,12 +63,10 @@ const PageTemplate = (props) => {
         setTheme(theme.name === themes.dark ? lightTheme : darkTheme)
     }
 
-    console.log(defaultTheme)
-
     return (
         <React.Fragment>
             <ThemeContext.Provider value={theme}>
-                <GlobalStyle />
+                <GlobalStyle theme={theme} />
                 <Head>
                     <title>Chris Knopf's Digital Resume</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
