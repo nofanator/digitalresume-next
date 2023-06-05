@@ -29,7 +29,7 @@ const About = (props) => {
     const { aboutSummary, repo, tech, style } = props
     const siteUrl = process.env.NEXT_PUBLIC_SITEURL
 
-    if (style === pageStyles.horizontal && siteUrl) {
+    if (style === pageStyles.horizontal) {
         return (
             <Section skinny style={style}>
                 <Div textAlign={'left'}>

@@ -7,7 +7,6 @@ import JobDuration from '@/common/JobDuration'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const Div = styled.div`
-    page-break-inside: avoid;
     border-bottom: 1px dashed;
     padding: 16px 0 4px 0;
 

@@ -16,7 +16,7 @@ export const getStaticProps = async () => {
     }
 }
 
-const Jobs = (props) => {
+const Print = (props) => {
     const { cmsData } = props
 
     if (!cmsData) {
@@ -24,7 +24,7 @@ const Jobs = (props) => {
     }
 
     return (
-        <PageTemplate defaultTheme={getTheme(themes.light)}>
+        <PageTemplate defaultTheme={getTheme(themes.light)} showThemeSwitcher={false}>
             {cmsData.componentsCollection.items.map((c, i) => (
                 <ComponentByType
                     key={`component-by-type-${i}`}
@@ -36,4 +36,4 @@ const Jobs = (props) => {
     )
 }
 
-export default Jobs
+export default Print

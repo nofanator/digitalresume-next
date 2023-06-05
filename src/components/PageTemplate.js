@@ -7,8 +7,6 @@ import { ThemeContext, getTheme, themes, ThemeSwitcher } from '@/common/Themes'
 
 const GlobalStyle = createGlobalStyle`
 body {
-    background-color: #000;
-    color: #fff;
     height: 100%;
     width: 100%;
     padding: 0;
@@ -44,7 +42,7 @@ body {
 }
 `
 const PageTemplate = (props) => {
-    const { children, defaultTheme } = props
+    const { children, defaultTheme, showThemeSwitcher } = props
 
     const [theme, setTheme] = useState(defaultTheme)
 
@@ -54,6 +52,8 @@ const PageTemplate = (props) => {
     const toggleTheme = () => {
         setTheme(theme.name === themes.dark ? lightTheme : darkTheme)
     }
+
+    console.log(defaultTheme)
 
     return (
         <React.Fragment>
@@ -77,7 +77,7 @@ const PageTemplate = (props) => {
                 </Head>
                 <div>
                     {children}
-                    <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
+                    {showThemeSwitcher && <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />}
                 </div>
             </ThemeContext.Provider>
         </React.Fragment>
@@ -86,10 +86,12 @@ const PageTemplate = (props) => {
 
 PageTemplate.propTypes = {
     defaultTheme: PropTypes.object.isRequired,
+    showThemeSwitcher: PropTypes.bool,
 }
 
 PageTemplate.defaultProps = {
     defaultTheme: getTheme(themes.dark),
+    showThemeSwitcher: true,
 }
 
 export default PageTemplate
